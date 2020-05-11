@@ -89,14 +89,14 @@
       name: kubelet
       daemon_reload: yes
       state: restarted
-      
+
   - name: Copy the join command to server location
     copy: src=/vagrant/join-command dest=/tmp/join-command.sh mode=0777
     delegate_to: localhost
-    
+
   - name: Join the node to cluster
     command: sh /tmp/join-command.sh
-    
+
   handlers:
     - name: docker status
       service: name=docker state=started

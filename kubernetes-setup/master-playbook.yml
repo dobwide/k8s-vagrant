@@ -103,7 +103,6 @@
 
   - name: Install calico pod network
     become: false
-#    command: kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml
     command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
   - name: Generate join command
